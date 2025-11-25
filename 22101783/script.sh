@@ -1,10 +1,8 @@
-#!/bin/bash
-
-yacc -d -y --debug --verbose 22101783.y
+yacc -d -y --debug --verbose 22101783+22201782.y
 echo 'Generated the parser C file as well the header file'
 g++ -w -c -o y.o y.tab.c
 echo 'Generated the parser object file'
-flex 22101783.l
+flex 22101783+22201782.l
 echo 'Generated the scanner C file'
 g++ -fpermissive -w -c -o l.o lex.yy.c
 echo 'Generated the scanner object file'
